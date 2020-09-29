@@ -7695,7 +7695,7 @@ License - nucleoapp.com/license/
     <form action="/upload">
         <input type="submit" value="Upload a photo" />
     </form>
-    <p sec:authorize="isAuthenticated()">Username;<span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
+    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
     <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
     <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
     <p sec:authorize="isAuthenticated()">e-mail: <span sec:authorize="isAuthenticated()" th:text="${members.email}"></span></p>
