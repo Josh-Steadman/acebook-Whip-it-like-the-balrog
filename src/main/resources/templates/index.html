@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.springframework.org/schema/data/jaxb"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 <style>
     /*COMMENT STUFF HERE*/
     * {
@@ -7691,6 +7692,13 @@ License - nucleoapp.com/license/
     <form action="http://localhost:8080/makepost">
         <input type="submit" value="Make a post" />
     </form>
+    <p sec:authorize="isAuthenticated()">Username;<span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
+    <p sec:authorize="isAuthenticated()">First Name ; <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
+    <p sec:authorize="isAuthenticated()">Last Name ; <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
+    <p sec:authorize="isAuthenticated()">e - mail ; <span sec:authorize="isAuthenticated()" th:text="${members.email}"></span></p>
+    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/register" role="button">Register &raquo;</a>
+    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/login" role="button">Login &raquo;</a>
+    <a sec:authorize="isAuthenticated()" class="btn btn-lg btn-primary" href="/" role="button">Logout &raquo;</a>
 </header>
 <div class="wrapper">
     <div class="page-header section-dark" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')">
