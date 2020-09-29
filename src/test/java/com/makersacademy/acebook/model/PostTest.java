@@ -2,7 +2,6 @@ package com.makersacademy.acebook.model;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.*;
-import java.util.Date;
 
 import org.junit.Test;
 
