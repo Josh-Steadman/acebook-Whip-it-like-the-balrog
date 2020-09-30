@@ -25,6 +25,7 @@ import java.security.Principal;
 import com.makersacademy.acebook.storage.StorageFileNotFoundException;
 import com.makersacademy.acebook.storage.StorageService;
 
+
 @Controller
 public class UploadController {
 
@@ -34,6 +35,8 @@ public class UploadController {
     public UploadController(StorageService storageService) {
         this.storageService = storageService;
     }
+
+    @Autowired
     MemberDAO memberDAO;
 
     @GetMapping("/upload")
@@ -43,6 +46,7 @@ public class UploadController {
                 path -> MvcUriComponentsBuilder.fromMethodName(UploadController.class,
                         "serveFile", path.getFileName().toString()).build().toUri().toString())
                 .collect(Collectors.toList()));
+
         model.addAttribute("members", memberDAO.getOne(principal.getName()));
 
         return "uploadForm";
