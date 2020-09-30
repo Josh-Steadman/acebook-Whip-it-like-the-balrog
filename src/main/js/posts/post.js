@@ -12,11 +12,11 @@ const Post = (props) => {
 					: props.post.name === "Bilbo"?
 						<img src="https://i.redd.it/1yabzzu6lmd21.jpg"/>
 						: props.post.name === "Frodo"?
-							<img src="https://i.pinimg.com/736x/28/b9/8f/28b98f7cdce838278d683d3b809c8f1e.jpg"/>
+							<img src="https://img.cinemablend.com/filter:scale/cb/d/a/2/2/e/9/da22e90569af458c138e33237415feedce0d8ae2c158954da64156968384284c.jpg?fw=1200"/>
 							: props.post.name === "Aragorn"?
 								<img src="https://vignette.wikia.nocookie.net/lotr/images/b/b6/Aragorn_profile.jpg/revision/latest?cb=20170121121423"/>
 								: props.post.name === "Gimli"?
-									<img src="https://middle-earthencyclopedia.weebly.com/uploads/3/8/2/9/3829140/1925657.png?316"/>
+									<img src="https://vignette.wikia.nocookie.net/lotr/images/5/57/Gimli_at_the_siege_of_moria.jpg/revision/latest/scale-to-width-down/340?cb=20070726164348"/>
 									: props.post.name === "Legolas"?
 										<img src="https://vignette.wikia.nocookie.net/lotr/images/3/33/Legolas_-_in_Two_Towers.PNG/revision/latest/top-crop/width/360/height/450?cb=20120916035151"/>
 										:props.post.name === "Sam"?
