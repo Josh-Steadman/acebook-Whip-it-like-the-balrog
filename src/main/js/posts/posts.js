@@ -5,7 +5,9 @@ class Posts extends React.Component {
   constructor(props) {
     super(props);
     this.getPosts = this.getPosts.bind(this);
+    this.state = 0;
   }
+
 
 	render() {
 		return (
