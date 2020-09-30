@@ -406,8 +406,7 @@
             transform: translate3d(-50%, 0, 0);
         }
     }
-<<<<<<< HEAD
-=======
+
 
     #outer
     {
@@ -435,7 +434,7 @@
         -webkit-text-stroke-color: black;
     }
 
->>>>>>> e4e1a6d209737caa2a7926ce1c52ec9029a0fdf2
+
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -469,7 +468,7 @@
     <form class="inner" action="/upload">
         <input type="submit" class="btn" value="Upload a photo" />
     </form>
-<<<<<<< HEAD
+
     <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
     <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
     <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
@@ -506,9 +505,9 @@
                 </div>
             </div>
         </div>
-=======
+
         <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>
->>>>>>> e4e1a6d209737caa2a7926ce1c52ec9029a0fdf2
+
     </div>
 </header>
 <div class="wrapper">
