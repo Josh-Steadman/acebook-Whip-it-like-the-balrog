@@ -6,7 +6,6 @@
     .bs-example{
         margin: 20px;
     }
-    /*COMMENT STUFF HERE*/
     * {
         box-sizing: border-box;
         margin: 0;
@@ -179,7 +178,6 @@
     .post-main .post-footer a{
         color: #acb4c2;
         text-decoration: none;
-
         -webkit-transition: 350ms color;
         -moz-transition: 350ms color;
         -ms-transition: 350ms color;
@@ -216,7 +214,7 @@
         border-width: 2px;
         font-size: 12px;
         font-weight: 600;
-        padding: 0.5rem 18px;
+        padding: 15rem 10rem;
         line-height: 1.75;
         cursor: pointer;
         text-transform: uppercase;
@@ -329,7 +327,6 @@
         min-height: 100vh;
         max-height: 999px;
         overflow-x: hidden;
-        /*overflow: hidden;*/
         position: relative;
         width: 100%;
         align-items: center;
@@ -352,7 +349,7 @@
     }
 
     .title-brand {
-        max-width: 450px;
+        max-width: 600px;
         max-height: 750px;
         margin: 0 auto;
         position: relative;
@@ -366,11 +363,11 @@
         position: relative;
         font-size: 20px;
         background: #132026;
-        padding: 6px 10px;
-        border-radius: 4px;
+        padding: 1px 1px;
+        border-radius: 2px;
         top: 0;
         font-weight: 600;
-        margin-top: 10px;
+        margin-top: 4px;
         right: -15px;
     }
 
@@ -414,10 +411,38 @@
         }
     }
 
+    #outer
+    {
+        width:100%;
+        text-align: left;
+    }
+    .inner
+    {
+        display: inline-block;
+    }
+
+    .header {
+        background: url(https://cameronscookware.com/wp-content/uploads/2019/12/the-shire-wallpaper-luxury-49-the-hobbit-the-shire-wallpaper-on-wallpapersafari-this-month-of-the-shire-wallpaper.jpg) no-repeat center;
+        background-position: center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+    }
+
+    .white-label {
+        color: #FFFFFF;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: black;
+    }
+
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
 <script>
     $(document).ready(function(){
         $("#myModal").on('shown.bs.modal', function(){
@@ -432,18 +457,21 @@
 </head>
 <body>
 <header class="header">
-    <form action="/cards">
-        <input type="submit" value="Play a game" />
+    <div id="avatar"></div>
+    <br>
+    <br>
+    <br>
+    <h2 id="the-name" class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></h2>
+    <h4 class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></h4>
+    <div id="outer">
+    <form class="inner" action="/cards">
+        <input type="submit" class="btn" value="Play a game" />
     </form>
-    <form action="/upload">
-        <input type="submit" value="Upload a photo" />
+    <form class="inner" action="/upload">
+        <input type="submit" class="btn" value="Upload a photo" />
     </form>
-    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
-    <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
-    <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/register" role="button">Sign Up &raquo;</a>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/login" role="button">Login &raquo;</a>
-    <a sec:authorize="isAuthenticated()" class="btn btn-lg btn-primary" href="/logout" role="button">Logout &raquo;</a>
+        <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>
+    </div>
 </header>
 <div class="wrapper">
     <div class="page-header section-dark" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')">
@@ -452,9 +480,7 @@
             <div class="container">
                 <div class="title-brand">
                     <div class="bs-example">
-                        <!-- Button HTML (to Trigger Modal) -->
                         <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">New Post</a>
-                        <!-- Modal HTML -->
                         <div id="myModal" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -481,7 +507,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div id="all-posts"></div>
                     <div class="fog-low">
                         <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
