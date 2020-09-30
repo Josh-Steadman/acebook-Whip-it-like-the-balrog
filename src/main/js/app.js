@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom');
 
 import PostsBuilder from './posts/postsBuilder'
 
-class App extends React.Component {
+class AllPosts extends React.Component {
 
   render() {
     return (
@@ -13,6 +13,6 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-	<App />,
-	document.getElementById('app')
+	<AllPosts />,
+	document.getElementById('all-posts')
 )
