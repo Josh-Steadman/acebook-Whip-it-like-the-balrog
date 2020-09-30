@@ -4,8 +4,8 @@ let count = 0
 
 let incrementMe = () => {
 	console.log("liked")
-	let newCount = count + 1
-	return newCount
+	count += 1
+	return count
 }
 
 
@@ -62,7 +62,7 @@ const Post = (props) => {
 						</span>
 					</div>
 				</div>
-				<button style="color: black" onClick={incrementMe}>Likes: {newCount}</button>
+				<button onClick={incrementMe}>Likes: {incrementMe()}</button>
 				{/*<div className="post-actions">*/}
 				{/*	<a href="#">Reply</a>*/}
 				{/*</div>*/}
