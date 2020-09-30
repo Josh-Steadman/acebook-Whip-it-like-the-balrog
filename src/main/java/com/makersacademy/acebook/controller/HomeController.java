@@ -35,6 +35,11 @@ public class HomeController {
 		return "index";
 	}
 
+	@GetMapping(value="/cards")
+	public String playCards() {
+		return "cardGame";
+	}
+
 
 
 }
