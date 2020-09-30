@@ -32,6 +32,8 @@ public class HomeController {
 		model.addAttribute("message", "Hello everyone, we are go to back to Spring with together");
 		model.addAttribute("date", new Date());
 		model.addAttribute("members", memberDAO.getOne(principal.getName()));
+
+
 		return "index";
 	}
 

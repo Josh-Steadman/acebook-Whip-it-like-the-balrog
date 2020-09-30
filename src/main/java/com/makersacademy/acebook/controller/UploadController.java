@@ -3,6 +3,7 @@ package com.makersacademy.acebook.controller;
 import java.io.IOException;
 import java.util.stream.Collectors;
 
+import com.makersacademy.acebook.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import com.makersacademy.acebook.dao.MemberDAO;
+import java.security.Principal;
 
 import com.makersacademy.acebook.storage.StorageFileNotFoundException;
 import com.makersacademy.acebook.storage.StorageService;
@@ -31,14 +34,16 @@ public class UploadController {
     public UploadController(StorageService storageService) {
         this.storageService = storageService;
     }
+    MemberDAO memberDAO;
 
     @GetMapping("/upload")
-    public String listUploadedFiles(Model model) throws IOException {
+    public String listUploadedFiles(Model model, Principal principal, Member member) throws IOException {
 
         model.addAttribute("files", storageService.loadAll().map(
                 path -> MvcUriComponentsBuilder.fromMethodName(UploadController.class,
                         "serveFile", path.getFileName().toString()).build().toUri().toString())
                 .collect(Collectors.toList()));
+        model.addAttribute("members", memberDAO.getOne(principal.getName()));
 
         return "uploadForm";
     }

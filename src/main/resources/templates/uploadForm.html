@@ -1,7 +1,16 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <body>
+<header class="header">
 
+    <form action="/">
+        <input type="submit" value="HomePage" />
+    </form>
+    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
+    <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
+    <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
+</header>
 <div th:if="${message}">
     <h2 th:text="${message}"/>
 </div>
