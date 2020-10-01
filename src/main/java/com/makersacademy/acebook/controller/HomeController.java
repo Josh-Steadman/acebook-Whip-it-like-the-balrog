@@ -42,6 +42,9 @@ public class HomeController {
 		return "cardGame";
 	}
 
+	@GetMapping(value="/doit")
+	public String doIt() {return "doIt";}
+
 
 
 }
