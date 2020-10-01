@@ -385,10 +385,7 @@
         margin-left: 30%;
         opacity: 1;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> ee841fe23e41853ee766ff762119e1f896a3fe64
     .moving-clouds {
         position: absolute;
         z-index: 1;
@@ -564,67 +561,7 @@
     <br>
     <br>
     <h2 id="the-name" class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></h2>
-<<<<<<< HEAD
-    <h4 class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></h4>
-    <div id="outer">
-    <form class="inner" action="/cards">
-        <input type="submit" class="btn" value="Play a game" />
-    </form>
-    <form class="inner" action="/upload">
-        <input type="submit" class="btn" value="Upload a photo" />
-    </form>
-
-    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
-    <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
-    <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/register" role="button">Sign Up &raquo;</a>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/login" role="button">Login &raquo;</a>
-    <a sec:authorize="isAuthenticated()" class="btn btn-lg btn-primary" href="/logout" role="button">Logout &raquo;</a>
-    <div class="bs-example">
-        <!-- Button HTML (to Trigger Modal) -->
-        <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Launch Demo Modal</a>
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Your Feedback</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputComment">Comments</label>
-                                <textarea class="form-control" id="inputComment" rows="4"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>
-
-=======
     <h4 class="white-label" sec:authorize="isAuthenticated()"><i><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></i></h4>
-<!--    <div id="outer">-->
-<!--    <form class="inner" action="/cards">-->
-<!--        <input type="submit" class="btn" value="Play a game" />-->
-<!--    </form>-->
-<!--    <form class="inner" action="/upload">-->
-<!--        <input type="submit" class="btn" value="Upload a photo" />-->
-<!--    </form>-->
-<!--        <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>-->
-<!--    </div>-->
-<!--    HERE-->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <a href="/cards">Play a game</a>
@@ -634,7 +571,6 @@
 
     <div id="main">
         <button class="openbtn" onclick="openNav()">☰ Menu</button>
->>>>>>> ee841fe23e41853ee766ff762119e1f896a3fe64
     </div>
 
     <script>
