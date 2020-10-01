@@ -1,13 +1,18 @@
-## Acebook
+## Shirebook
 
-This is a java/springboot and react project to be developed on.
-
+Shirebook is an exclusive Lord of the Rings themed social space built in Java. <br>
 It uses:
   - `maven` to build the project
   - `webpack` to bundle the javascript
   - `thymeleaf` to serve `index.html`
   - `react` to make requests to the api and render the component views
   - `flyway` to manage `postgres` db migrations
+  - `docker`
+  - 
+
+Users can sign-up as one of a selection of wonderful characters from the franchise, and will receive an avatar. <br><br>
+Users can chat to the other inhabitants of the shire, play a game of cards or share a photo to the image
+board of their adventures in middle-earth. <br><br>
 
 ### Card wall
 
