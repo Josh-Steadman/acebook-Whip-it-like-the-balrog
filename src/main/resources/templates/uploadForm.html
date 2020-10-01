@@ -10,35 +10,149 @@
 
 <style>
 
+    body{
+        background-color: #dee1e3;
+        font-family: "Roboto", "Tahoma", "Arial", sans-serif;,
+    }
+
     img {
         float: left;
         width: 20%;
         padding: 5px;
         margin: 5px;
-        border-radius: 2%;
+        border-radius: 5%;
+    }
+    #outer
+    {
+        width:100%;
+        text-align: left;
+    }
+    .inner
+    {
+        display: inline-block;
+    }
+
+    .header {
+        background: url(https://cameronscookware.com/wp-content/uploads/2019/12/the-shire-wallpaper-luxury-49-the-hobbit-the-shire-wallpaper-on-wallpapersafari-this-month-of-the-shire-wallpaper.jpg) no-repeat center;
+        background-position: center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+    }
+
+    .white-label {
+        color: #FFFFFF;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: black;
+        padding-left: 3px;
+    }
+
+    /*SIDEBAR*/
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: gray;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        opacity: 0.97;
+    }
+
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+        color: dodgerblue;
+        background-color: #FFFFFF;
+        text-decoration: none;
+    }
+    .sidebar .closebtn:hover {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        padding-left: 3px;
+        color: white;
+        border: none;
+        transition: all .2s ease-in-out;
+    }
+
+    .openbtn:hover {
+        color: antiquewhite;
+        transform: scale(1.1);
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 1px;
     }
 
 
-</style>
 
+</style>
+<head>
+    <title>Image Gallery</title>
+</head>
 
 <body>
 
 <header class="header">
+    <br>
+    <div id="avatar"></div>
+    <br>
+    <br>
+    <br>
+    <h2 id="the-name" class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></h2>
+    <h4 class="white-label" sec:authorize="isAuthenticated()"><i><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></i></h4>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/cards">Play a game</a>
+        <a href="/">Posts Feed</a>
+        <a href="/logout">Logout</a>
+    </div>
 
-    <form action="/">
-        <input type="submit" value="HomePage" />
-    </form>
-    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
-    <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
-    <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/register" role="button">Sign Up &raquo;</a>
-    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/login" role="button">Login &raquo;</a>
-    <a sec:authorize="isAuthenticated()" class="btn btn-lg btn-primary" href="/logout" role="button">Logout &raquo;</a>
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+    <!--    END-->
 </header>
-<div th:if="${message}">
-    <h2 th:text="${message}"/>
-</div>
 
 <div>
     <form method="POST" enctype="multipart/form-data" th:action="@{/upload}">

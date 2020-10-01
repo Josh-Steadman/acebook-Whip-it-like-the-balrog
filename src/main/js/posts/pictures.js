@@ -11,7 +11,7 @@ const Pictures = (props) => {
                     <img src="https://vignette.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest/top-crop/width/360/height/450?cb=20121110131754"/>
                     : name === "<span>Bilbo</span>"?
                         <img src="https://i.redd.it/1yabzzu6lmd21.jpg"/>
-                        : name === "<span>Frodo"?
+                        : name === "<span>Frodo</span>"?
                             <img src="https://img.cinemablend.com/filter:scale/cb/d/a/2/2/e/9/da22e90569af458c138e33237415feedce0d8ae2c158954da64156968384284c.jpg?fw=1200"/>
                             : name === "<span>Aragorn</span>"?
                                 <img src="https://vignette.wikia.nocookie.net/lotr/images/b/b6/Aragorn_profile.jpg/revision/latest?cb=20170121121423"/>
