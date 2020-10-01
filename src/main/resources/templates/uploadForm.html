@@ -1,7 +1,41 @@
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.springframework.org/schema/data/jaxb"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<script type="text/javascript">
+    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+<style>
+
+    img {
+        float: left;
+        width: 20%;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 2%;
+    }
+
+
+</style>
+
 
 <body>
 
+<header class="header">
+
+    <form action="/">
+        <input type="submit" value="HomePage" />
+    </form>
+    <p sec:authorize="isAuthenticated()">Username: <span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></p>
+    <p sec:authorize="isAuthenticated()">First Name: <span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></p>
+    <p sec:authorize="isAuthenticated()">Last Name: <span sec:authorize="isAuthenticated()" th:text="${members.lastName}"></span></p>
+    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/register" role="button">Sign Up &raquo;</a>
+    <a sec:authorize="!isAuthenticated()" class="btn btn-lg btn-primary" href="/login" role="button">Login &raquo;</a>
+    <a sec:authorize="isAuthenticated()" class="btn btn-lg btn-primary" href="/logout" role="button">Logout &raquo;</a>
+</header>
 <div th:if="${message}">
     <h2 th:text="${message}"/>
 </div>
@@ -15,14 +49,19 @@
     </form>
 </div>
 
-<div>
-    <ul>
-        <li th:each="file : ${files}">
-            <a th:href="${file}" />
+
+    <div class="images">
+
+    <div class="row" th:each="file : ${files}">
+        <a th:href="${file}"/>
             <img th:src="${file}"/>
-        </li>
-    </ul>
-</div>
+    </div>
+    </div>
+
 
 </body>
+
+
 </html>
+
+
