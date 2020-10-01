@@ -43,8 +43,10 @@ public class HomeController {
 	}
 
 	@GetMapping(value="/doit")
-	public String doIt() {return "doIt";}
+	public String doIt() { return "doIt"; }
 
+	@GetMapping(value="/game")
+	public String game() { return "game"; }
 
 
 }
