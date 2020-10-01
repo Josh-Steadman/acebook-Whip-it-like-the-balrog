@@ -217,7 +217,6 @@
         padding: 15rem 10rem;
         line-height: 1.75;
         cursor: pointer;
-        text-transform: uppercase;
         background-color: #66615B;
         border-color: #66615B;
         color: #FFFFFF;
@@ -377,7 +376,7 @@
         margin-left: -35%;
         margin-bottom: -50px;
         width: 110%;
-        opacity: .85;
+        opacity: .99;
     }
     .fog-low img {
         width: 100%;
@@ -386,6 +385,10 @@
         margin-left: 30%;
         opacity: 1;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ee841fe23e41853ee766ff762119e1f896a3fe64
     .moving-clouds {
         position: absolute;
         z-index: 1;
@@ -432,6 +435,78 @@
         color: #FFFFFF;
         -webkit-text-stroke-width: 0.1px;
         -webkit-text-stroke-color: black;
+        padding-left: 3px;
+    }
+
+    .btn-like {
+        color: black;
+        padding: 0;
+        border: none;
+        background: none;
+        /*height: 15px;*/
+    }
+
+    /*SIDEBAR*/
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: gray;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        opacity: 0.97;
+    }
+
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+        color: dodgerblue;
+        background-color: #FFFFFF;
+        text-decoration: none;
+    }
+    .sidebar .closebtn:hover {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        padding-left: 3px;
+        color: white;
+        border: none;
+        transition: all .2s ease-in-out;
+    }
+
+    .openbtn:hover {
+        color: antiquewhite;
+        transform: scale(1.1);
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 1px;
     }
 
 
@@ -446,7 +521,35 @@
         $("#myModal").on('shown.bs.modal', function(){
             $(this).find('input[type="text"]').focus();
         });
+
+        $("#lookHere").on("click", function() {
+            console.log('help me')
+        });
     });
+
+    $(document).ready(function(){
+        let //valueCount = $("counter").value(),
+            counter = $("#counting"),
+            value = $("#counting").html();
+
+
+        $("#help").on("click", function() {
+            console.log('here')
+            counter.html(++value);
+            console.log(value);
+        });
+
+    });
+
+    // function change() {
+    $("#lookHere").on("click", function() {
+        let elem = document.getElementById("wow");
+        console.log("LORD")
+        console.log(elem)
+        if (elem.value === "👍") elem.value = "👎";
+        else elem.value = "👍";
+    })
+
 </script>
 <head lang="en">
     <meta charset="UTF-8"/>
@@ -455,11 +558,13 @@
 </head>
 <body>
 <header class="header">
+    <br>
     <div id="avatar"></div>
     <br>
     <br>
     <br>
     <h2 id="the-name" class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${members.firstName}"></span></h2>
+<<<<<<< HEAD
     <h4 class="white-label" sec:authorize="isAuthenticated()"><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></h4>
     <div id="outer">
     <form class="inner" action="/cards">
@@ -508,7 +613,42 @@
 
         <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>
 
+=======
+    <h4 class="white-label" sec:authorize="isAuthenticated()"><i><span sec:authorize="isAuthenticated()" th:text="${#authentication.getPrincipal().getUsername()}"></span></i></h4>
+<!--    <div id="outer">-->
+<!--    <form class="inner" action="/cards">-->
+<!--        <input type="submit" class="btn" value="Play a game" />-->
+<!--    </form>-->
+<!--    <form class="inner" action="/upload">-->
+<!--        <input type="submit" class="btn" value="Upload a photo" />-->
+<!--    </form>-->
+<!--        <a sec:authorize="isAuthenticated()" class="btn" href="/logout" role="button">Logout</a>-->
+<!--    </div>-->
+<!--    HERE-->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/cards">Play a game</a>
+        <a href="/upload">Upload a photo</a>
+        <a href="/logout">Logout</a>
     </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+>>>>>>> ee841fe23e41853ee766ff762119e1f896a3fe64
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+<!--    END-->
 </header>
 <div class="wrapper">
     <div class="page-header section-dark" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/antoine-barres.jpg')">
@@ -517,24 +657,20 @@
             <div class="container">
                 <div class="title-brand">
                     <div class="bs-example">
-                        <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">New Post</a>
+                        <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Write a post...</a>
                         <div id="myModal" class="modal fade">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title">New Post</h4>
-                                    </div>
                                     <div class="modal-body">
                                         <form method="POST" enctype="multipart/form-data" th:action="@{/makepost}">
                                             <div class="form-group">
                                                 <input type="hidden" class="form-control" placeholder="Name" name="name" th:value="${members.firstName}">
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" style="text-align: left">
                                                 <label for="inputComment">What's on your mind master hobbit...</label>
-                                                <input type="text"  class="form-control" id="inputComment" rows="4" placeholder="Message" name="message">
+                                                <input type="text" style="height: 50px;" class="form-control" id="inputComment" placeholder="Message" name="message">
                                             </div>
-                                            <div class="modal-footer">
+                                            <div class="modal-footer" style="text-align: center">
                                                 <input type="submit" name="login"  class="btn btn-primary" value="Post">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                                             </div>
@@ -552,7 +688,7 @@
                         <img src="http://demos.creative-tim.com/paper-kit-2/assets/img/fog-low.png" alt="">
                     </div>
                 </div>
-                <h2 class="presentation-subtitle text-center">A WILTB Production</h2>
+                <h2 style="color: whitesmoke" class="presentation-subtitle text-center">A WILTB Production</h2>
             </div>
         </div>
         <div class="moving-clouds" style="background-image: url('http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png'); ">
