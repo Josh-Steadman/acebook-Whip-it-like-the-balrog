@@ -3,14 +3,25 @@ import React from 'react';
 let count = 0
 
 let incrementMe = () => {
-	console.log("liked")
-	count += 1
+	// console.log("liked")
+	count ++
+	// console.log(count)
 	return count
+}
+
+let nice = "👍"
+let bad = "👎"
+
+let sweet = () => {
+	window.alert("You liked this! 👍")
+}
+
+let no = () => {
+	window.alert("You disliked this... 👎")
 }
 
 
 const Post = (props) => {
-
 
 	return (
 
@@ -62,10 +73,10 @@ const Post = (props) => {
 						</span>
 					</div>
 				</div>
-				<button onClick={incrementMe}>Likes: {incrementMe()}</button>
-				{/*<div className="post-actions">*/}
-				{/*	<a href="#">Reply</a>*/}
-				{/*</div>*/}
+				{/*<button className="btn-like" id="help" onClick={incrementMe}>Likes: {count}</button>*/}
+				{/*<button className="btn-like" id="help" type="button"><div id="counting">0</div></button>*/}
+				<button className="btn-like" id="help" onClick={sweet}>{" 👍 |"}&nbsp;</button>
+				<button className="btn-like" id="help" onClick={no}>{"👎"}</button>
 			</div>
 		</div>
 
