@@ -42,8 +42,8 @@ const Post = (props) => {
 																<img src="https://pbs.twimg.com/profile_images/3536610637/a921387e1d2702bd52c44256672d0ee2_400x400.jpeg"/>
 																:props.post.name === "Gollum"?
 																	<img src="https://pyxis.nymag.com/v1/imgs/e52/04d/e6830f166c141a1a40be6d566887921d38-gollum.rvertical.w1200.jpg"/>
-											:props.post.name === "Boromir"?
-												<img src="https://giantbomb1.cbsistatic.com/uploads/scale_medium/2/27024/857251-boromir6.jpg"/>
+																		:props.post.name === "Boromir"?
+																		<img src="https://giantbomb1.cbsistatic.com/uploads/scale_medium/2/27024/857251-boromir6.jpg"/>
 																		:props.post.name === "Palpatine"?
 																			<img src="https://i.redd.it/1c3bk0d6onq01.jpg"/>
 																			:props.post.name === "Darth Sidious"?
@@ -54,6 +54,10 @@ const Post = (props) => {
 																						<img src="https://i.pinimg.com/originals/3d/d7/5a/3dd75a11d8498b92ad8fd5cd7d02043d.jpg"/>
 																						:props.post.name === "Obi-wan"?
 																							<img src="https://cdn.vox-cdn.com/thumbor/KnYjrcxAozD5Q8pmr3QAXsJCwag=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/6434955/obi-wan.0.jpg"/>
+																							:props.post.name === "Galadriel"?
+																								<img src="https://vignette.wikia.nocookie.net/lotr/images/9/91/LadyGaladriel.jpg/revision/latest/scale-to-width-down/340?cb=20150806142301"/>
+																								:props.post.name === "Arwen"?
+																									<img src="https://i.pinimg.com/originals/16/46/d8/1646d842afe50bd80c4425245f86ef35.jpg"/>
 						: <img src="https://giantbomb1.cbsistatic.com/uploads/scale_small/14/141402/2380577-2662941_grima_wormtongue_large_1_.jpg"/>
 				}
 			</div>

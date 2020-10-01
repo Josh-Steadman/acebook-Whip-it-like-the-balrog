@@ -45,6 +45,10 @@ const Pictures = (props) => {
                                                                                         <img src="https://i.pinimg.com/originals/3d/d7/5a/3dd75a11d8498b92ad8fd5cd7d02043d.jpg"/>
                                                                                         :name === "<span>Obi-wan</span>"?
                                                                                             <img src="https://cdn.vox-cdn.com/thumbor/KnYjrcxAozD5Q8pmr3QAXsJCwag=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/6434955/obi-wan.0.jpg"/>
+                                                                                            :name === "<span>Galadriel</span>"?
+                                                                                                <img src="https://vignette.wikia.nocookie.net/lotr/images/9/91/LadyGaladriel.jpg/revision/latest/scale-to-width-down/340?cb=20150806142301"/>
+                                                                                                :name === "<span>Arwen</span>"?
+                                                                                                    <img src="https://i.pinimg.com/originals/16/46/d8/1646d842afe50bd80c4425245f86ef35.jpg"/>
                                                                         : <img src="https://giantbomb1.cbsistatic.com/uploads/scale_small/14/141402/2380577-2662941_grima_wormtongue_large_1_.jpg"/>
                 }
             </div>
